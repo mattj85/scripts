@@ -2,12 +2,11 @@
 
 function doBackup {
 	echo "[+] Starting incremental backup"
-	cd $HOME
 	rsync -avrz --stats\
 		--exclude ".config"\
 		--exclude ".local"\
 		--exclude ".cache"\
-		. /media/$USER/Backup/backups/serenity.debian
+		$HOME/ /media/$USER/Backup/backups/serenity.debian
 
 	# log the backup
 	echo "[+] Backup completed - $(date)" >> $HOME/.backuplog.log
