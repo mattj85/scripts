@@ -28,5 +28,5 @@ case $1 in
 	--install-chrome)
 		install ;;
 	*)
-		$HOME/.vs-chrome/chrome-linux/chrome "https://live.valueservices.uk" --no-sandbox --disable-setuid-sandbox
+		$HOME/.vs-chrome/chrome-linux/chrome "https://live.valueservices.uk" --no-sandbox --disable-setuid-sandbox ;;
 esac

@@ -6,6 +6,9 @@ function doBackup {
 		--exclude ".config"\
 		--exclude ".local"\
 		--exclude ".cache"\
+		--include ".config/i3"\
+		--include ".config/i3blocks"\
+		--include ".config/compton.conf"\
 		$HOME/ /media/$USER/Backup/backups/serenity.debian
 
 	# log the backup
