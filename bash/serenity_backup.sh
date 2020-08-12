@@ -7,7 +7,7 @@ function notify() {
 	fi
 }
 
-function doBackup {
+function doBackup() {
 	echo "[+] Starting incremental backup"
 	rsync -avrz --stats --quiet\
 		--exclude ".config"\
@@ -24,7 +24,7 @@ function doBackup {
 	exit 0
 }
 
-function logView {
+function logView() {
 	cat $HOME/.backuplog.log
 }
 
