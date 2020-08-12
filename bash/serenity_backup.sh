@@ -28,15 +28,17 @@ function logView() {
 	cat $HOME/.backuplog.log
 }
 
-if [ -d "/media/matt/Backup" ] ; then
-	case $1 in
-		--view-log|--log)
-			logView ;;
-		*)
-			doBackup ;;
-	esac
-else
-	notify "failed"
-	echo "[!] Backup drive not connected"
-	echo "[!] Backup failed - $(date)" >> $HOME/.backuplog.log
-fi
+
+# main
+case $1 in
+	--view-log|--log|--logs)
+		logView ;;
+	*)
+		if [ -d "/media/matt/Backup" ] ; then
+			doBackup
+		else
+			notify "failed"
+			echo "[!] Backup drive not connected"
+			echo "[!] Backup failed - $(date)" >> $HOME/.backuplog.log
+		fi ;;
+esac
